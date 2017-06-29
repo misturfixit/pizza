@@ -1,9 +1,15 @@
-
-
-def crust
-	crust = ["Thin", "Brick", "Pan"].sample
+def size 
+size = ["Small", "Med", "Large"].sample
+#print "here"
 end
 
+def crust
+	crust = ["Thin", "Brick", "Pan", "Tossed"].sample
+end
+
+def sauce 
+	sauce = ["Marinara", "White", "AlfRedo"]. sample
+end
 def meats 
 	meats = ["Pepperoni", "Saus.", "Bacon", "Squirrel"].sample
 end
@@ -15,52 +21,31 @@ end
 def othertopp 
 	othertopp = ["Peppers", "Onions", "Veggies", "stuff Offada Floor"].sample
 end
-
-print "Welcome to HaHa's Pizza....We don't care what you want....Except.."
-#puts #spaceee
-
-puts "How many pizzzas You want Bruh ?" 
-	x = gets.chomp.to_i
-    count =     1
-    cost =  0
-	x.times do
-    #size = size
-puts "Pizza #{count}"
-    count += 1
-
-
-def size 
-size = ["Small", "Med", "Large"].sample
-
+p "How many pizzzas You want Bruh ?" 
+  x = gets.chomp.to_i
+count = 1
+cost = 0
+x.times do
+  piz_size = size
+  p "Pizza #{count}"
+     count +=1
+  puts piz_size                                                            
+  puts crust                      
+  puts sauce                
+  puts meats                     
+  puts cheese                           
+  puts othertopp                           
+    if piz_size == "Small"    
+      cost += 5
+      puts "price is $#{cost}"
+    elsif piz_size == "Med"   
+      cost += 10
+      puts "Price is $#{cost}"
+    elsif piz_size == "Large"  
+      cost += 15
+      puts  "Price is $#{cost}"
+    end
+  puts
 end
-
-puts "size is #{size}"
-   if  size == "Small"    
-   then cost =  5.00 
-
-puts  "Price is #{cost}"
-  elsif size == "Med"   
-  then cost = 12.50  
-
-puts  "Price is #{cost}"
-  else   size == "Large"  
-         cost = 15.00 
-
-
-puts "Price is #{cost}"
- 
-end
-#loop do 
-
-
-
-puts size
-#puts cost
-puts crust
-puts meats
-puts cheese
-puts othertopp
-
-end
-
-
+puts "Total cost is $#{'%.2f' %(cost * 1.06)}"
+   
