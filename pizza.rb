@@ -21,19 +21,34 @@ end
 def othertopp 
 	othertopp = ["Peppers", "Onions", "Veggies", "stuff Offada Floor"].sample
 end
+
+def extra
+	extra = ["extracheese","noextracheese", "noextrameat", "extrameat"].sample
+end
+
+def delivery
+	delivery = [" yohouse", "notyohouse"].sample
+end
+
+
+#p " hullo there".titlize 
+
 p "How many pizzzas You want Bruh ?" 
   x = gets.chomp.to_i
 count = 1
 cost = 0
 x.times do
   piz_size = size
+  mor_stuf = extra#.rand
+  
   p "Pizza #{count}"
      count +=1
   puts piz_size                                                            
-  puts crust                      
+  puts crust
+  puts mor_stuf                  
   puts sauce                
-  puts meats                     
-  puts cheese                           
+  puts meats    #if  "extrameat"  then cost += 2                
+  puts cheese   #if "extracheese" then cost += 2                         
   puts othertopp                           
     if piz_size == "Small"    
       cost += 5
@@ -45,6 +60,24 @@ x.times do
       cost += 15
       puts  "Price is $#{cost}"
     end
+    
+    if mor_stuf  == "extrameat"
+      cost += 2
+      puts  "Price w/extra is $#{cost}"
+    elsif  mor_stuf == "noextrameat"
+    
+      puts "No extra"	
+    elsif mor_stuf == "extracheese"
+      cost += 2
+ 	  puts " Price w/extra is $#{cost}"
+    elsif  mor_stuf == "noextracheese"
+    
+      puts " No extra"	
+     	
+     
+    end	
+     	 
+     
   puts
 end
 puts "Total cost is $#{'%.2f' %(cost * 1.06)}"
